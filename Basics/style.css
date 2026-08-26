@@ -1,11 +1,12 @@
-body {
-    background-color: black;
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    color: #fff;
+    background-color: black;
 }
 
 .box {
@@ -19,4 +20,29 @@ body {
 
 .box2 {
     background-color: orangered;
+}
+
+.box3 {
+    background-color:magenta;
+}
+
+#nav {
+    padding: 30px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#part {
+    display: flex;
+    gap: 100px;
+}
+
+h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    text-decoration: underline;
 }
