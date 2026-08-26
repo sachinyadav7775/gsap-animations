@@ -1,4 +1,3 @@
-# -gsap-animations-
 # GSAP Animations
 
 A collection of GSAP animations, experiments, and creative web animation projects.
