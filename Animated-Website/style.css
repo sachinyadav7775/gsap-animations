@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+/* =========================7 COMMON SECTION ========================= */
+
+section {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+    width: 100%;
+    padding: 30px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav h1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 45px;
+}
+
+nav h1 i {
+    display: inline-block;
+
+    font-size: 55px;
+
+    transform: rotate(45deg);
+}
+
+.nav-element {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 40px;
+}
+
+nav h4 {
+    font-size: 20px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+nav button {
+    padding: 12px 25px;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    border: 2px solid #000;
+    border-radius: 8px;
+
+    background-color: transparent;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   CENTER
+========================= */
+
+.center {
+    width: 100%;
+
+    min-height: 65vh;
+
+    padding: 50px;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* LEFT PART */
+
+.center-part1 {
+    width: 40%;
+}
+
+.center-part1 h1 {
+    max-width: 600px;
+
+    font-size: 50px;
+    line-height: 1.15;
+}
+
+.center-part1 p {
+    max-width: 550px;
+
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.center-part1 button {
+    padding: 18px 30px;
+
+    color: #fff;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #000;
+
+    cursor: pointer;
+}
+
+
+/* RIGHT PART */
+
+.center-part2 {
+    width: 60%;
+    height: 100%;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-part2 img {
+    width: 90%;
+    max-width: 650px;
+}
+
+
+/* =========================
+   LOGOS
+========================= */
+
+.section1bottom {
+    width: 100%;
+    padding: 30px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.section1bottom img {
+    width: auto;
+    max-width: 140px;
+    height: 55px;
+    object-fit: contain;
+    filter: grayscale(100%);
+}
+
+
+/* ========================= SECTION 2 ========================= */
+
+/* SERVICES */
+
+.services {
+    width: 100%;
+    padding: 40px 80px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* SERVICES HEADING */
+
+.services h3 {
+    padding: 0px 10px;
+    font-size: 40px;
+    font-weight: 600;
+    background-color: #9AE975;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+
+/* SERVICES TEXT */
+
+.services p {
+    max-width: 700px;
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.container {
+    height: 83%;
+    width: 100%;
+    flex-shrink: 0;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.elem {
+    height: 400px;
+    width: 48%;
+    border-radius: 20px;
+    border: 2px solid brown;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    nav {
+        padding: 25px 30px;
+    }
+
+    .nav-element {
+        gap: 20px;
+    }
+
+    nav h4 {
+        font-size: 16px;
+    }
+
+    nav button {
+        font-size: 15px;
+        padding: 10px 15px;
+    }
+
+    .center {
+        padding: 40px 30px;
+    }
+
+    .center-part1 h1 {
+        font-size: 40px;
+    }
+
+    .section1bottom {
+        padding: 30px;
+        gap: 20px;
+    }
+
+    .section1bottom img {
+        max-width: 100px;
+        height: 45px;
+    }
+
+    .services {
+        padding: 40px 30px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    nav {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .nav-element {
+        flex-wrap: wrap;
+    }
+
+    .center {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .center-part1,
+    .center-part2 {
+        width: 100%;
+    }
+
+    .center-part1 h1 {
+        font-size: 38px;
+    }
+
+    .center-part2 img {
+        width: 80%;
+    }
+
+    .section1bottom {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .services {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .services h3 {
+        font-size: 32px;
+    }
+}
