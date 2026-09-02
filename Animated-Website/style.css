@@ -9,13 +9,14 @@ html,
 body {
     width: 100%;
     min-height: 100%;
+    overflow-x: hidden;
+    position: relative;
 }
 
 /* ========================= COMMON SECTION ========================= */
 section {
     width: 100%;
     min-height: 100vh;
-    position: relative;
 }
 
 /* ========================= NAVBAR ========================= */
@@ -28,9 +29,9 @@ nav {
 }
 
 nav h1 {
+    gap: 10px;
     display: flex;
     align-items: center;
-    gap: 10px;
     font-size: 45px;
     font-weight: 600;
 }
@@ -42,33 +43,35 @@ nav h1 i {
 }
 
 .nav-element {
+    gap: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
 }
 
 nav h4 {
     font-size: 20px;
     font-weight: 500;
+    letter-spacing: 0.08rem;
     white-space: nowrap;
 }
 
 nav button {
-    padding: 12px 25px;
+    cursor: pointer;
     font-size: 18px;
     font-weight: 500;
-    border: 2px solid #000;
+    padding: 12px 25px;
     border-radius: 8px;
+    letter-spacing: 0.08rem;
+    border: 2px solid #000;
     background-color: transparent;
-    cursor: pointer;
 }
 
 /* ========================= CENTER SECTION ========================= */
 .center {
     width: 100%;
     min-height: 65vh;
-    padding: 50px;
+    padding: 10px 80px;
     display: flex;
     align-items: center;
 }
@@ -79,14 +82,14 @@ nav button {
 }
 
 .center-part1 h1 {
-    max-width: 600px;
+    max-width: 500px;
     font-size: 50px;
     line-height: 1.15;
     font-weight: 600;
 }
 
 .center-part1 p {
-    max-width: 550px;
+    max-width: 400px;
     margin-top: 30px;
     margin-bottom: 30px;
     font-size: 16px;
@@ -94,20 +97,15 @@ nav button {
 }
 
 .center-part1 button {
-    padding: 18px 30px;
+    border: none;
     color: #fff;
+    cursor: pointer;
     font-size: 18px;
     font-weight: 500;
-    border: none;
+    letter-spacing: 0.04rem;
+    padding: 18px 30px;
     border-radius: 10px;
     background-color: #000;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.center-part1 button:hover {
-    background-color: #9AE975;
-    color: #000;
 }
 
 /* RIGHT */
@@ -117,22 +115,23 @@ nav button {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .center-part2 img {
     width: 90%;
     max-width: 650px;
+    right: 0;
 }
 
 /* ========================= LOGOS ========================= */
 .section1bottom {
+    gap: 40px;
     width: 100%;
     padding: 30px 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
 }
 
 .section1bottom img {
@@ -140,13 +139,6 @@ nav button {
     max-width: 140px;
     height: 55px;
     object-fit: contain;
-    filter: grayscale(100%);
-    transition: 0.3s ease;
-}
-
-.section1bottom img:hover {
-    filter: grayscale(0%);
-    transform: scale(1.05);
 }
 
 /* ========================= SECTION 2 ========================= */
@@ -156,11 +148,11 @@ nav button {
 
 /* ========================= SERVICES ========================= */
 .services {
+    gap: 40px;
     width: 100%;
     padding: 40px 80px;
     display: flex;
     align-items: center;
-    gap: 40px;
 }
 
 /* SERVICES HEADING */
@@ -168,9 +160,9 @@ nav button {
     padding: 0 10px;
     font-size: 40px;
     font-weight: 600;
-    background-color: #9AE975;
     border-radius: 8px;
     white-space: nowrap;
+    background-color: #9AE975;
 }
 
 /* SERVICES TEXT */
@@ -183,11 +175,11 @@ nav button {
 
 /* ========================= CARDS CONTAINER ========================= */
 .container {
+    gap: 30px;
     width: 100%;
     padding: 30px 80px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
 }
 
 /* ========================= COMMON CARD ========================= */
@@ -201,11 +193,6 @@ nav button {
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 5px 0 #000;
-    transition: all 0.3s ease;
-}
-
-.elem:hover {
-    transform: translateY(-8px);
 }
 
 /* ========================= CARD LEFT ========================= */
@@ -219,7 +206,7 @@ nav button {
 }
 
 .elem-part1 h2 {
-    max-width: 230px;
+    max-width: 200px;
     padding: 4px 8px;
     font-size: 25px;
     line-height: 1.25;
@@ -239,13 +226,13 @@ nav button {
 .elem-part1 h4 i {
     width: 35px;
     height: 35px;
+    color: #fff;
     margin-right: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     background-color: #000;
-    color: #fff;
     font-size: 20px;
 }
 
@@ -283,29 +270,25 @@ nav button {
     background-color: #f3f3f3;
 }
 
-/* Black card icon */
 .elem2 .elem-part1 h4 i,
 .elem3 .elem-part1 h4 i {
-    background-color: #fff;
     color: #000;
+    background-color: #fff;
 }
 
-/* Green heading */
 .elem1 .elem-part1 h2,
 .elem4 .elem-part1 h2 {
     background-color: #9AE975;
 }
 
-/* Black card heading */
 .elem3 .elem-part1 h2 {
-    background-color: #fff;
     color: #000;
+    background-color: #fff;
 }
 
-/* Green card heading */
 .elem2 .elem-part1 h2 {
-    background-color: #fff;
     color: #000;
+    background-color: #fff;
 }
 
 /* ========================= RESPONSIVE TABLET ========================= */

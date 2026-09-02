@@ -8,50 +8,49 @@ function page1Animation() {
         duration: 0.6,
         delay: 1,
         stagger: 0.15
-    });
+    })
 
     tl.from(".center-part1 h1", {
         x: -300,
         opacity: 0,
         duration: 0.7
-    });
+    })
 
     tl.from(".center-part1 p", {
         x: -100,
         opacity: 0,
         duration: 0.5
-    });
+    })
 
     tl.from(".center-part1 button", {
         y: 30,
         opacity: 0,
         duration: 0.6
-    });
+    })
 
     tl.from(".center-part2 img", {
         x: 100,
         opacity: 0,
         duration: 0.8
-    }, "-=0.3");
+    }, "-=0.3")
 
     tl.from(".section1bottom img", {
         y: 30,
         opacity: 0,
         duration: 0.6,
         stagger: 0.2
-    });
+    })
 }
 
-page1Animation();
-
 function page2Animation () {
+
     let tl2 = gsap.timeline({
         scrollTrigger:{
             trigger:".section2",
             scroller:"body",
             start:"top 50%",
             end:"top -50",
-            scrub:2
+            // scrub:1
         }
     })
 
@@ -86,4 +85,5 @@ function page2Animation () {
     },"sk")
 }
 
-page2Animation()
+// page1Animation()
+// page2Animation()  
