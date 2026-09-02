@@ -11,20 +11,14 @@ body {
     min-height: 100%;
 }
 
-
-/* =========================7 COMMON SECTION ========================= */
-
+/* ========================= COMMON SECTION ========================= */
 section {
     width: 100%;
     min-height: 100vh;
     position: relative;
 }
 
-
-/* =========================
-   NAVBAR
-========================= */
-
+/* ========================= NAVBAR ========================= */
 nav {
     width: 100%;
     padding: 30px 50px;
@@ -37,15 +31,13 @@ nav h1 {
     display: flex;
     align-items: center;
     gap: 10px;
-
     font-size: 45px;
+    font-weight: 600;
 }
 
 nav h1 i {
     display: inline-block;
-
     font-size: 55px;
-
     transform: rotate(45deg);
 }
 
@@ -53,7 +45,6 @@ nav h1 i {
     display: flex;
     align-items: center;
     justify-content: center;
-
     gap: 40px;
 }
 
@@ -65,83 +56,65 @@ nav h4 {
 
 nav button {
     padding: 12px 25px;
-
     font-size: 18px;
     font-weight: 500;
-
     border: 2px solid #000;
     border-radius: 8px;
-
     background-color: transparent;
-
     cursor: pointer;
 }
 
-
-/* =========================
-   CENTER
-========================= */
-
+/* ========================= CENTER SECTION ========================= */
 .center {
     width: 100%;
-
     min-height: 65vh;
-
     padding: 50px;
-
     display: flex;
     align-items: center;
 }
 
-
-/* LEFT PART */
-
+/* LEFT */
 .center-part1 {
     width: 40%;
 }
 
 .center-part1 h1 {
     max-width: 600px;
-
     font-size: 50px;
     line-height: 1.15;
+    font-weight: 600;
 }
 
 .center-part1 p {
     max-width: 550px;
-
     margin-top: 30px;
     margin-bottom: 30px;
-
     font-size: 16px;
     line-height: 1.6;
 }
 
 .center-part1 button {
     padding: 18px 30px;
-
     color: #fff;
-
     font-size: 18px;
     font-weight: 500;
-
     border: none;
     border-radius: 10px;
-
     background-color: #000;
-
     cursor: pointer;
+    transition: 0.3s ease;
 }
 
+.center-part1 button:hover {
+    background-color: #9AE975;
+    color: #000;
+}
 
-/* RIGHT PART */
-
+/* RIGHT */
 .center-part2 {
     width: 60%;
-    height: 100%;
-
+    min-height: 400px;
     position: relative;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -152,11 +125,7 @@ nav button {
     max-width: 650px;
 }
 
-
-/* =========================
-   LOGOS
-========================= */
-
+/* ========================= LOGOS ========================= */
 .section1bottom {
     width: 100%;
     padding: 30px 80px;
@@ -172,13 +141,20 @@ nav button {
     height: 55px;
     object-fit: contain;
     filter: grayscale(100%);
+    transition: 0.3s ease;
 }
 
+.section1bottom img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
 
 /* ========================= SECTION 2 ========================= */
+.section2 {
+    padding-bottom: 80px;
+}
 
-/* SERVICES */
-
+/* ========================= SERVICES ========================= */
 .services {
     width: 100%;
     padding: 40px 80px;
@@ -188,9 +164,8 @@ nav button {
 }
 
 /* SERVICES HEADING */
-
 .services h3 {
-    padding: 0px 10px;
+    padding: 0 10px;
     font-size: 40px;
     font-weight: 600;
     background-color: #9AE975;
@@ -198,9 +173,7 @@ nav button {
     white-space: nowrap;
 }
 
-
 /* SERVICES TEXT */
-
 .services p {
     max-width: 700px;
     font-size: 16px;
@@ -208,32 +181,147 @@ nav button {
     font-weight: 500;
 }
 
+/* ========================= CARDS CONTAINER ========================= */
 .container {
-    height: 83%;
     width: 100%;
-    flex-shrink: 0;
-    padding: 30px 50px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    padding: 30px 80px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
 }
 
+/* ========================= COMMON CARD ========================= */
 .elem {
-    height: 400px;
-    width: 48%;
+    width: 100%;
+    min-height: 320px;
+    padding: 30px;
+    border: 2px solid #000;
     border-radius: 20px;
-    border: 2px solid brown;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 5px 0 #000;
+    transition: all 0.3s ease;
 }
 
+.elem:hover {
+    transform: translateY(-8px);
+}
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* ========================= CARD LEFT ========================= */
+.elem-part1 {
+    width: 50%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.elem-part1 h2 {
+    max-width: 230px;
+    padding: 4px 8px;
+    font-size: 25px;
+    line-height: 1.25;
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+/* LEARN MORE */
+.elem-part1 h4 {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.elem-part1 h4 i {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #000;
+    color: #fff;
+    font-size: 20px;
+}
+
+/* ========================= CARD RIGHT ========================= */
+.elem-part2 {
+    width: 50%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.elem-part2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* ========================= CARD COLORS ========================= */
+.elem1 {
+    background-color: #f3f3f3;
+}
+
+.elem2 {
+    color: #fff;
+    background-color: #000;
+}
+
+.elem3 {
+    background-color: #191A19;
+    color: #fff;
+}
+
+.elem4 {
+    background-color: #f3f3f3;
+}
+
+/* Black card icon */
+.elem2 .elem-part1 h4 i,
+.elem3 .elem-part1 h4 i {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Green heading */
+.elem1 .elem-part1 h2,
+.elem4 .elem-part1 h2 {
+    background-color: #9AE975;
+}
+
+/* Black card heading */
+.elem3 .elem-part1 h2 {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Green card heading */
+.elem2 .elem-part1 h2 {
+    background-color: #fff;
+    color: #000;
+}
+
+/* ========================= RESPONSIVE TABLET ========================= */
 
 @media (max-width: 1000px) {
 
     nav {
         padding: 25px 30px;
+    }
+
+    nav h1 {
+        font-size: 35px;
+    }
+
+    nav h1 i {
+        font-size: 45px;
     }
 
     .nav-element {
@@ -249,6 +337,7 @@ nav button {
         padding: 10px 15px;
     }
 
+    /* CENTER */
     .center {
         padding: 40px 30px;
     }
@@ -257,6 +346,11 @@ nav button {
         font-size: 40px;
     }
 
+    .center-part1 p {
+        font-size: 15px;
+    }
+
+    /* LOGOS */
     .section1bottom {
         padding: 30px;
         gap: 20px;
@@ -267,24 +361,58 @@ nav button {
         height: 45px;
     }
 
+    /* SERVICES */
     .services {
         padding: 40px 30px;
     }
+
+    /* CARDS */
+    .container {
+        padding: 30px;
+        gap: 25px;
+    }
+
+    .elem {
+        min-height: 280px;
+    }
 }
 
-
+/* ========================= MOBILE ========================= */
 @media (max-width: 700px) {
 
+    /* NAV */
     nav {
+        padding: 25px 20px;
         flex-direction: column;
         gap: 25px;
     }
 
-    .nav-element {
-        flex-wrap: wrap;
+    nav h1 {
+        font-size: 38px;
     }
 
+    nav h1 i {
+        font-size: 45px;
+    }
+
+    .nav-element {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 15px 25px;
+    }
+
+    nav h4 {
+        font-size: 15px;
+    }
+
+    nav button {
+        padding: 9px 14px;
+        font-size: 14px;
+    }
+
+    /* CENTER */
     .center {
+        padding: 40px 20px;
         flex-direction: column;
         gap: 50px;
     }
@@ -298,21 +426,112 @@ nav button {
         font-size: 38px;
     }
 
-    .center-part2 img {
-        width: 80%;
+    .center-part1 p {
+        font-size: 15px;
     }
 
+    .center-part1 button {
+        padding: 15px 22px;
+        font-size: 16px;
+    }
+
+    .center-part2 {
+        min-height: auto;
+    }
+
+    .center-part2 img {
+        width: 85%;
+    }
+
+    /* LOGOS */
     .section1bottom {
+        padding: 30px 20px;
         flex-wrap: wrap;
         justify-content: center;
+        gap: 25px;
     }
 
+    .section1bottom img {
+        width: 90px;
+        height: 40px;
+    }
+
+    /* SERVICES */
     .services {
+        padding: 40px 20px;
         flex-direction: column;
         align-items: flex-start;
+        gap: 20px;
     }
 
     .services h3 {
         font-size: 32px;
+    }
+
+    .services p {
+        font-size: 14px;
+    }
+
+    /* CARDS */
+    .container {
+        padding: 20px;
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .elem {
+        min-height: 250px;
+    }
+}
+
+/* ========================= SMALL MOBILE ========================= */
+@media (max-width: 450px) {
+
+    nav h1 {
+        font-size: 32px;
+    }
+
+    nav h1 i {
+        font-size: 38px;
+    }
+
+    .nav-element {
+        gap: 12px 18px;
+    }
+
+    nav h4 {
+        font-size: 13px;
+    }
+
+    nav button {
+        font-size: 13px;
+    }
+
+    .center-part1 h1 {
+        font-size: 32px;
+    }
+
+    .center-part1 p {
+        font-size: 14px;
+    }
+
+    .center-part2 img {
+        width: 100%;
+    }
+
+    .services h3 {
+        font-size: 28px;
+    }
+
+    .services p {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .elem {
+        min-height: 220px;
     }
 }
