@@ -85,5 +85,26 @@ function page2Animation () {
     },"sk")
 }
 
+function page3Animation () {
+    let tl3 = gsap.timeline({
+        scrollTrigger:{
+            trigger:".section3",
+            scroller:"body",
+            start:"top 50%",
+            end:"top -50",
+            // scrub:1
+        }
+    })
+
+    tl3.from(".text-element", {
+        y:30,
+        opacity:0,
+        duration:0.5
+    })
+
+}
+
+// page3Animation()
+
 // page1Animation()
 // page2Animation()  
