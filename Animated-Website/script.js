@@ -102,9 +102,25 @@ function page3Animation () {
         duration:0.5
     })
 
+    tl3.from(".casestudy", {
+        x:-300,
+        opacity:0,
+        duration:0.8
+    })
+
+    tl3.from(".box", {
+        x:1000,
+        opacity:0,
+        duration:1
+    })
+
+    tl3.from(".footer", {
+        opacity:0,
+        duration:0.5
+    })
+
 }
 
-// page3Animation()
-
-// page1Animation()
-// page2Animation()  
+page3Animation()
+page1Animation()
+page2Animation()  
