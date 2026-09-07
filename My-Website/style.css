@@ -285,9 +285,9 @@ nav {
     justify-content: space-between;
     gap: 30px;
 }
-.informatio-text1,
-.informatio-text2,
-.informatio-text3 {
+.information-text1,
+.information-text2,
+.information-text3 {
     gap: 20px;
     display: flex;
     align-items: flex-start;
@@ -298,15 +298,82 @@ nav {
     box-shadow: 0px 10px 30px #58575752;
 }
 
-.informatio-text1 h4,
-.informatio-text2 h4,
-.informatio-text3 h4 {
+.information-text1 h4,
+.information-text2 h4,
+.information-text3 h4 {
     font-size: 30px;
 } 
 
 .card-information i {
     color: #f4a261;
     font-size: 30px;
+}
+
+/* ========================== FOOTER ============================== */
+
+footer {
+    width: 100%;
+}
+
+.panal-text {
+    padding: 50px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f2f2f2;
+}
+
+
+.service h4 , .assessment h4,
+.about h4, .blog h4, .rent h4 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.service a , .assessment a,
+.about a, .blog a, .rent a {
+    color: #3c3c3c;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+
+.service-text, .about-text, .assessment-text,
+.blog-text,.rent-text {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.panal-icon {
+    padding: 20px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    background: #1a1a1a;
+}
+
+.icons i {
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid rgb(217, 216, 215);
+}
+
+.panal-icon .icons {
+    font-size: 35px;
+}
+
+.panal-p {
+    color: #b4b2b2;
+}
+
+.panal-icon1 i {
+    color: #ff0000;
 }
 
 /* @media (max-width: 900px) {
