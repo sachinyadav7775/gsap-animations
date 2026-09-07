@@ -376,25 +376,104 @@ footer {
     color: #ff0000;
 }
 
-/* @media (max-width: 900px) {
+/* ========================= TABLET ========================= */
+
+@media (max-width: 1000px) {
+
+    nav {
+        padding: 25px 5%;
+    }
+
+    .nav-text {
+        gap: 25px;
+    }
+
+    .nav-text a {
+        font-size: 16px;
+    }
+
+    .nav-btn button {
+        font-size: 16px;
+        padding: 8px 22px;
+    }
+
+    .center {
+        padding: 30px 5%;
+    }
+
+    .center-text {
+        width: 40%;
+    }
+
+    .center-text h1 {
+        font-size: 42px;
+    }
+
+    .center-text p {
+        font-size: 17px;
+    }
+
+    .center-img {
+        width: 55%;
+    }
+
+    .bottom-logo {
+        padding: 25px 5%;
+        gap: 25px;
+    }
+
     .cards {
+        padding: 0 5%;
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .card-information {
+        padding: 20px 5%;
+        gap: 20px;
+    }
+
+    .information-text1,
+    .information-text2,
+    .information-text3 {
+        padding: 30px;
+    }
+
+    .information-text1 h4,
+    .information-text2 h4,
+    .information-text3 h4 {
+        font-size: 22px;
+    }
+
+    .panal-text {
+        padding: 40px 5%;
+        gap: 25px;
+    }
+
+    .service h4,
+    .assessment h4,
+    .about h4,
+    .blog h4,
+    .rent h4 {
+        font-size: 20px;
+    }
+
+    .service a,
+    .assessment a,
+    .about a,
+    .blog a,
+    .rent a {
+        font-size: 15px;
+    }
+
 }
 
-@media (max-width: 600px) {
-    .cards {
-        grid-template-columns: 1fr;
-    }
-} */
 
+/* ========================= MOBILE ========================= */
 
-@media (max-width: 450px) {
+@media (max-width: 700px) {
 
     nav {
         padding: 20px;
-        flex-direction: row;
-        gap: 0;
     }
 
     .nav-text,
@@ -404,22 +483,23 @@ footer {
 
     .menu-icon {
         display: flex;
-        width: 40px;
-        height: 40px;
     }
 
-    .menu-icon i {
-        font-size: 25px;
+    .nav-icon i {
+        font-size: 38px;
     }
+
+    .nav-icon h1 {
+        font-size: 26px;
+    }
+
+
+    /* HERO */
 
     .center {
-        width: 100%;
         min-height: auto;
-        padding: 50px 20px 20px;
-        display: flex;
+        padding: 50px 20px 30px;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
         text-align: center;
     }
 
@@ -430,26 +510,185 @@ footer {
 
     .center-text h1 {
         font-size: 38px;
-        line-height: 1.1;
     }
 
     .center-text p {
         font-size: 16px;
-        line-height: 1.5;
-        margin-top: 15px;
     }
 
     .center-img {
         width: 100%;
-        margin-top: 30px;
-        display: flex;
-        align-items: center;
+        margin-top: 35px;
         justify-content: center;
     }
 
     .center-img img {
         width: 100%;
-        max-width: 400px;
+        max-width: 500px;
+    }
+
+
+    /* LOGOS */
+
+    .bottom-logo {
+        padding: 25px 20px;
+        justify-content: center;
+        gap: 25px;
+    }
+
+    .bottom-logo img {
+        height: 40px;
+        max-width: 100px;
+    }
+
+
+    /* FOR SALE */
+
+    .sale-text {
+        padding: 30px 20px;
+    }
+
+    .sale-text h2 {
+        font-size: 26px;
+    }
+
+    .sale-btn {
+        gap: 10px;
+    }
+
+    .sale-btn button {
+        width: 38px;
+        height: 38px;
+        font-size: 20px;
+    }
+
+
+    /* CARDS */
+
+    .cards {
+        padding: 0 20px;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .card-img {
+        height: 240px;
+    }
+
+    .card-text {
+        padding: 15px;
+    }
+
+    .property-info {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .card-bottom h2 {
+        font-size: 20px;
+    }
+
+
+    /* INFORMATION */
+
+    .card-information {
+        padding: 20px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .information-text1,
+    .information-text2,
+    .information-text3 {
+        padding: 25px;
+        width: 100%;
+    }
+
+    .information-text1 h4,
+    .information-text2 h4,
+    .information-text3 h4 {
+        font-size: 22px;
+    }
+
+    .card-information i {
+        font-size: 26px;
+    }
+
+
+    /* FOOTER */
+
+    .panal-text {
+        padding: 40px 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px 20px;
+    }
+
+    .service h4,
+    .assessment h4,
+    .about h4,
+    .blog h4,
+    .rent h4 {
+        font-size: 19px;
+    }
+
+    .service a,
+    .assessment a,
+    .about a,
+    .blog a,
+    .rent a {
+        font-size: 14px;
+    }
+
+    .panal-icon {
+        padding: 25px 20px;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .panal-p {
+        font-size: 14px;
+    }
+
+    .panal-icon .icons {
+        font-size: 28px;
+    }
+
+}
+
+
+/* ========================= SMALL MOBILE ========================= */
+
+@media (max-width: 450px) {
+
+    .center-text h1 {
+        font-size: 34px;
+    }
+
+    .center-text p {
+        font-size: 15px;
+    }
+
+    .card-img {
+        height: 220px;
+    }
+
+    .property-info {
+        font-size: 11px;
+    }
+
+   .panal-text {
+        width: 100%;
+        padding: 40px 20px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 35px 20px;
     }
 
 }
