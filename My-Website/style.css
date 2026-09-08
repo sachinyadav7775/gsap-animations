@@ -8,59 +8,97 @@
 html,
 body {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
 }
 
-/* ========================= SECTION FIRST ========================== */
+body {
+    background: #fff;
+    color: #111;
+}
 
-section {
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button, a {
+    font-family: inherit;
+}
+
+/* ====================== SECTION FIRST / HERO ====================== */
+
+.section-first {
+    position: relative;
     width: 100%;
     min-height: 100vh;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 80% 35%,
+            rgba(255, 213, 0, 0.12),
+            transparent 30%
+        ),
+    #fff;
 }
+
+/* ============================ NAVBAR ========================= */
 
 nav {
     width: 100%;
+    padding: 30px 8%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 30px 8%;
 }
 
 .nav-icon h1 {
-    gap: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 12px;
+    font-size: 30px;
 }
 
 .nav-icon i {
-    color: yellow;
+    color: #ffd000;
     font-size: 45px;
 }
 
 .nav-text {
-    gap: 50px;
     display: flex;
     align-items: center;
+    gap: 45px;
 }
 
 .nav-text a {
     color: #000;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     text-decoration: none;
-    letter-spacing: 0.06rem;
+    letter-spacing: 0.03rem;
+    transition: 0.3s ease;
+}
+
+.nav-text a:hover {
+    color: #f4a261;
 }
 
 .nav-btn button {
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: 500;
     padding: 10px 30px;
+    border: 1px solid #888;
     border-radius: 6px;
-    letter-spacing: 0.06rem;
-    border: 1px solid gray;
-    background-color: transparent;
+    color: #111;
+    background: transparent;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.nav-btn button:hover {
+    color: #fff;
+    background: #111;
 }
 
 .menu-icon {
@@ -78,63 +116,221 @@ nav {
     font-size: 28px;
 }
 
+/* ====================== HERO ====================== */
+
 .center {
+    position: relative;
     width: 100%;
     min-height: 70vh;
-    padding: 20px 8%;
+    padding: 40px 8%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 60px;
 }
 
 .center-text {
-    width: 35%;
-    padding: 60px 0px;
+    position: relative;
+    z-index: 5;
+    width: 42%;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    border-radius: 50px;
+    color: #555;
+    background: #f6f6f6;
+    font-size: 13px;
+    font-weight: 500;
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.hero-badge i {
+    color: #f4a261;
+    font-size: 17px;
 }
 
 .center-text h1 {
-    font-size: 50px;
-    line-height: 1.1;
+    margin-top: 22px;
+    color: #111;
+    font-size: clamp(45px, 5vw, 70px);
+    line-height: 1.05;
+    font-weight: 600;
+    letter-spacing: -2px;
+    animation: fadeUp 1s ease forwards;
 }
 
-.center-text p {
-    font-size: 20px;
-    line-height: 1.5;
-    margin-top: 15px;
+.center-text h1 span {
+    position: relative;
+    color: #f4a261;
+
 }
 
-.center-img {
-    width: 60%;
+.center-text > p {
+    max-width: 520px;
+    margin-top: 22px;
+    color: #666;
+    font-size: 17px;
+    line-height: 1.7;
+    animation: fadeUp 1.2s ease forwards;
+}
+
+/* ========================== HERO BUTTONS ========================== */
+
+.hero-buttons {
+    margin-top: 30px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    gap: 15px;
+    animation: fadeUp 1.4s ease forwards;
+}
+
+.hero-buttons button {
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.explore-btn {
+    padding: 14px 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    color: #fff;
+    background: #111;
+}
+
+.explore-btn i {
+    font-size: 20px;
+}
+
+.explore-btn:hover {
+    background: #f4a261;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(244, 162, 97, 0.3);
+}
+
+.watch-btn {
+    padding: 13px 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #333;
+    background: transparent;
+}
+
+.watch-btn i {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #111;
+    background: #f1f1f1;
+}
+
+.watch-btn:hover {
+    color: #f4a261;
+}
+
+/* ====================== HERO IMAGE ====================== */
+
+.center-img {
+    position: relative;
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-circle {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        #fff1dc,
+        #ffe3bd
+    );
+    filter: blur(1px);
+    z-index: 0;
+    animation: circleFloat 5s ease-in-out infinite;
 }
 
 .center-img img {
+    position: relative;
+    z-index: 2;
     width: 100%;
-    height: auto;
     max-width: 650px;
-    object-fit: contain;
+    filter: drop-shadow(
+        0 30px 40px rgba(0, 0, 0, 0.15)
+    );
+    animation: heroImageFloat 4s ease-in-out infinite;
 }
 
-.bottom-logo {
-    gap: 35px;
-    width: 100%;
-    padding: 30px 8%;
+/* ======================== FLOATING PROPERTY CARD ======================== */
+
+.floating-card {
+    position: absolute;
+    right: 0;
+    bottom: 35px;
+    z-index: 5;
+    min-width: 260px;
+    padding: 15px 18px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    gap: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    animation: floatingCard 4s ease-in-out infinite;
 }
 
-.bottom-logo img {
-    width: auto;
-    height: 55px;
-    max-width: 140px;
-    object-fit: contain;
+.floating-icon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: #fff;
+    background: #111;
+    font-size: 20px;
 }
 
-/* ============================ SECTION SECOND ============================  */
+.floating-card h4 {
+    font-size: 14px;
+}
+
+.floating-card p {
+    margin-top: 2px;
+    color: #777;
+    font-size: 11px;
+}
+
+.floating-card strong {
+    margin-left: auto;
+    color: #008000;
+    font-size: 14px;
+}
+
+/* ======================= SECTION SECOND / FOR SALE ======================= */
+
+.section-second {
+    width: 100%;
+    padding-bottom: 80px;
+}
 
 .sale-text {
     width: 100%;
@@ -144,58 +340,75 @@ nav {
     justify-content: space-between;
 }
 
+.sale-text h2 {
+    font-size: 32px;
+    font-weight: 600;
+}
+
 .sale-btn {
-    gap: 20px;
     display: flex;
+    gap: 15px;
 }
 
 .sale-btn button {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
+    padding: 0;
     border: none;
-    color: #fff;
-    padding: 10px;
-    font-size: 25px;
-    cursor: pointer;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: orange;
+    color: #fff;
+    background: #f4a261;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
+.sale-btn button:hover {
+    background: #222;
+    transform: scale(1.05);
+}
+
+/* ========================= PROPERTY CARDS ======================== */
+
 .cards {
-    gap: 25px;
-    display: grid;
+    width: 100%;
+    padding: 0 8%;
     margin-top: 15px;
-    padding: 0px 8%;
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
 }
 
 .card {
-    background: #fff;
-    border-radius: 20px;
     padding: 20px;
     overflow: hidden;
-    transition: 0.3s ease;
+    border-radius: 20px;
+    background: #fff;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
 }
 
 .card-img {
-    height: 250px;
     position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
 }
 
 .card-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 7px;
     transition: 0.4s ease;
-    border-radius: 5px;
 }
 
 .card:hover .card-img img {
@@ -206,42 +419,53 @@ nav {
     position: absolute;
     top: 15px;
     left: 15px;
-    background: #fff;
-    color: #222;
     padding: 7px 14px;
     border-radius: 30px;
+    color: #222;
+    background: #fff;
     font-size: 13px;
     font-weight: 600;
 }
 
+/* ======================= CARD TEXT ======================= */
+
 .card-text {
-    padding: 20px;
+    padding: 20px 5px 5px;
 }
 
 .card-text h3 {
-    font-size: 19px;
     margin-bottom: 8px;
     color: #222;
+    font-size: 19px;
+    font-weight: 600;
 }
 
 .card-text > p {
+    margin-bottom: 18px;
     color: #777;
     font-size: 13px;
-    margin-bottom: 18px;
 }
 
 .card-text > p i {
-    color: #f4a261;
     margin-right: 5px;
+    color: #f4a261;
 }
 
+/* ======================== PROPERTY INFO ======================== */
+
 .property-info {
+    padding-bottom: 18px;
     display: flex;
+    align-items: center;
     gap: 15px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #eee;
     color: #666;
     font-size: 12px;
-    padding-bottom: 18px;
-    border-bottom: 1px solid #eee;
+}
+
+.property-info span {
+    white-space: nowrap;
 }
 
 .property-info i {
@@ -249,16 +473,19 @@ nav {
     color: #222;
 }
 
+/* ========================= CARD BOTTOM ========================= */
+
 .card-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-top: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .card-bottom h2 {
-    font-size: 22px;
     color: #008000;
+    font-size: 22px;
+    font-weight: 600;
 }
 
 .card-bottom button {
@@ -266,119 +493,319 @@ nav {
     height: 42px;
     border: none;
     border-radius: 50%;
+    color: #fff;
     background: #222;
-    color: white;
     font-size: 18px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .card-bottom button:hover {
     background: #f4a261;
+    transform: rotate(5deg);
 }
 
+/* ========================= INFORMATION CARDS ========================= */
+
 .card-information {
-    padding: 20px 8%;
-    margin-top: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
+    width: 100%;
+    padding: 25px 8%;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
 }
+
 .information-text1,
 .information-text2,
 .information-text3 {
-    gap: 20px;
+    min-height: 170px;
+    padding: 35px;
     display: flex;
     align-items: flex-start;
-    justify-content: center;
-    padding: 50px 60px;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0px 10px 30px #58575752;
+    gap: 20px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-.information-text1 h4,
-.information-text2 h4,
-.information-text3 h4 {
-    font-size: 30px;
-} 
+.card-information .icans {
+    flex-shrink: 0;
+}
 
 .card-information i {
     color: #f4a261;
     font-size: 30px;
 }
 
-/* ========================== FOOTER ============================== */
-
-footer {
-    width: 100%;
-}
-
-.panal-text {
-    padding: 50px 8%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #f2f2f2;
-}
-
-
-.service h4 , .assessment h4,
-.about h4, .blog h4, .rent h4 {
+.information-text1 h4,
+.information-text2 h4,
+.information-text3 h4 {
+    margin-bottom: 8px;
     font-size: 24px;
     font-weight: 600;
 }
 
-.service a , .assessment a,
-.about a, .blog a, .rent a {
-    color: #3c3c3c;
-    text-decoration: none;
-    font-size: 18px;
+.information-text1 p,
+.information-text2 p,
+.information-text3 p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
+/* ========================= SECTION THIRD ========================= */
 
-.service-text, .about-text, .assessment-text,
-.blog-text,.rent-text {
-    margin-top: 15px;
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
+.section-third {
+    width: 100%;
+    padding: 40px 0;
 }
 
-.panal-icon {
-    padding: 20px 8%;
+.box {
+    width: 100%;
+    padding: 80px 8%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 80px;
+    background: #aeacac;
+}
+
+/* ========================= THIRD SECTION IMAGE ======================= */
+
+.box-img {
+    position: relative;
+    width: 50%;
+}
+
+.box-img img {
+    width: 100%;
+    height: 600px;
+    display: block;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* ========================= TESTIMONIAL CARD ====================== */
+
+.small-card {
+    position: absolute;
+    right: -50px;
+    bottom: -50px;
+    width: 350px;
+    min-height: 200px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+#card-icon {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+#card-icon i {
+    margin: 0;
+    color: #f5b400;
+    font-size: 22px;
+}
+
+.small-card h4 {
+    color: #222;
+    font-size: 19px;
+    line-height: 1.4;
+}
+
+.small-card p {
+    color: #555;
+    font-size: 14px;
+}
+
+/* ======================== THIRD SECTION TEXT ======================== */
+
+.box-text {
+    width: 45%;
+}
+
+.box-text > h1 {
+    margin-bottom: 35px;
+    font-size: 42px;
+    line-height: 1.15;
+    font-weight: 600;
+}
+
+.text-card {
+    display: grid;
+    gap: 30px;
+}
+
+.first-text,
+.second-text,
+.third-text {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.first-text h2,
+.second-text h2,
+.third-text h2 {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #d8d8da;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.first-text h3,
+.second-text h3,
+.third-text h3 {
+    margin-bottom: 6px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.first-text p,
+.second-text p,
+.third-text p {
+    color: #252121;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* ======================= FOOTER ======================= */
+
+.footer {
+    width: 100%;
+}
+
+/* FOOTER TOP */
+
+.panal-text {
+    width: 100%;
+    padding: 60px 8%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    background: #f2f2f2;
+}
+
+.service h4,
+.assessment h4,
+.about h4,
+.blog h4,
+.rent h4 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.service-text,
+.about-text,
+.assessment-text,
+.blog-text,
+.rent-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.service a,
+.assessment a,
+.about a,
+.blog a,
+.rent a {
+    color: #3c3c3c;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.service a:hover,
+.assessment a:hover,
+.about a:hover,
+.blog a:hover,
+.rent a:hover {
+    color: #f4a261;
+    padding-left: 3px;
+}
+
+/* FOOTER BOTTOM */
+
+.panal-icon {
+    width: 100%;
+    padding: 25px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
     color: #fff;
     background: #1a1a1a;
 }
 
-.icons i {
-    width: 40px;
-    height: 40px;
-    padding: 6px;
-    cursor: pointer;
-    border-radius: 10px;
-    border: 1px solid rgb(217, 216, 215);
+.panal-icon1 h1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.panal-icon .icons {
+.panal-icon1 i {
+    color: #ffd000;
     font-size: 35px;
 }
 
 .panal-p {
     color: #b4b2b2;
+    font-size: 14px;
 }
 
-.panal-icon1 i {
-    color: #ff0000;
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-/* ========================= TABLET ========================= */
+.icons i {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border: 1px solid #555;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
 
-@media (max-width: 1000px) {
+.icons a {
+    text-decoration: none;
+}
+
+.icons i:hover {
+    color: #111;
+    background: #fff;
+    transform: translateY(-3px);
+}
+
+/* ====================== TABLET ====================== */
+
+@media (max-width: 1100px) {
 
     nav {
         padding: 25px 5%;
@@ -393,23 +820,24 @@ footer {
     }
 
     .nav-btn button {
-        font-size: 16px;
         padding: 8px 22px;
+        font-size: 16px;
     }
 
     .center {
         padding: 30px 5%;
+        gap: 40px;
     }
 
     .center-text {
-        width: 40%;
+        width: 42%;
     }
 
     .center-text h1 {
         font-size: 42px;
     }
 
-    .center-text p {
+    .center-text > p {
         font-size: 17px;
     }
 
@@ -417,9 +845,9 @@ footer {
         width: 55%;
     }
 
-    .bottom-logo {
-        padding: 25px 5%;
-        gap: 25px;
+    .hero-circle {
+        width: 420px;
+        height: 420px;
     }
 
     .cards {
@@ -428,24 +856,53 @@ footer {
     }
 
     .card-information {
-        padding: 20px 5%;
+        padding: 25px 5%;
         gap: 20px;
     }
 
     .information-text1,
     .information-text2,
     .information-text3 {
-        padding: 30px;
+        padding: 25px;
     }
 
     .information-text1 h4,
     .information-text2 h4,
     .information-text3 h4 {
-        font-size: 22px;
+        font-size: 20px;
+    }
+
+    .box {
+        padding: 60px 5%;
+        gap: 50px;
+    }
+
+    .box-img {
+        width: 48%;
+    }
+
+    .box-img img {
+        height: 500px;
+    }
+
+    .box-text {
+        width: 48%;
+    }
+
+    .box-text > h1 {
+        font-size: 34px;
+    }
+
+    .small-card {
+        right: -30px;
+        bottom: -30px;
+        width: 280px;
+        min-height: 180px;
+        padding: 20px;
     }
 
     .panal-text {
-        padding: 40px 5%;
+        padding: 45px 5%;
         gap: 25px;
     }
 
@@ -454,7 +911,7 @@ footer {
     .about h4,
     .blog h4,
     .rent h4 {
-        font-size: 20px;
+        font-size: 19px;
     }
 
     .service a,
@@ -462,13 +919,15 @@ footer {
     .about a,
     .blog a,
     .rent a {
-        font-size: 15px;
+        font-size: 14px;
     }
 
+    .panal-icon {
+        padding: 20px 5%;
+    }
 }
 
-
-/* ========================= MOBILE ========================= */
+/* ==================== MOBILE ===================== */
 
 @media (max-width: 700px) {
 
@@ -493,7 +952,6 @@ footer {
         font-size: 26px;
     }
 
-
     /* HERO */
 
     .center {
@@ -501,6 +959,7 @@ footer {
         padding: 50px 20px 30px;
         flex-direction: column;
         text-align: center;
+        gap: 20px;
     }
 
     .center-text {
@@ -508,18 +967,33 @@ footer {
         padding: 0;
     }
 
-    .center-text h1 {
-        font-size: 38px;
+    .hero-badge {
+        font-size: 12px;
     }
 
-    .center-text p {
+    .center-text h1 {
+        font-size: 38px;
+        letter-spacing: -1px;
+    }
+
+    .center-text > p {
+        margin-top: 12px;
         font-size: 16px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
     .center-img {
         width: 100%;
-        margin-top: 35px;
-        justify-content: center;
+        margin-top: 25px;
+    }
+
+    .hero-circle {
+        width: 350px;
+        height: 350px;
     }
 
     .center-img img {
@@ -527,20 +1001,11 @@ footer {
         max-width: 500px;
     }
 
-
-    /* LOGOS */
-
-    .bottom-logo {
-        padding: 25px 20px;
-        justify-content: center;
-        gap: 25px;
+    .floating-card {
+        right: 5%;
+        bottom: 20px;
+        min-width: 230px;
     }
-
-    .bottom-logo img {
-        height: 40px;
-        max-width: 100px;
-    }
-
 
     /* FOR SALE */
 
@@ -562,7 +1027,6 @@ footer {
         font-size: 20px;
     }
 
-
     /* CARDS */
 
     .cards {
@@ -580,52 +1044,134 @@ footer {
     }
 
     .card-text {
-        padding: 15px;
+        padding: 15px 5px 5px;
     }
 
     .property-info {
         gap: 10px;
-        flex-wrap: wrap;
     }
 
     .card-bottom h2 {
         font-size: 20px;
     }
 
-
     /* INFORMATION */
 
     .card-information {
         padding: 20px;
-        flex-direction: column;
-        align-items: stretch;
+        grid-template-columns: 1fr;
         gap: 20px;
     }
 
     .information-text1,
     .information-text2,
     .information-text3 {
-        padding: 25px;
         width: 100%;
+        min-height: auto;
+        padding: 25px;
     }
 
     .information-text1 h4,
     .information-text2 h4,
     .information-text3 h4 {
-        font-size: 22px;
+        font-size: 21px;
     }
 
     .card-information i {
         font-size: 26px;
     }
 
+    /* THIRD SECTION */
+
+    .section-third {
+        padding: 20px 0;
+    }
+
+    .box {
+        padding: 50px 20px 80px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 80px;
+    }
+
+    .box-img {
+        width: 100%;
+    }
+
+    .box-img img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .small-card {
+        width: 85%;
+        min-height: 180px;
+        right: 50%;
+        bottom: -50px;
+        transform: translateX(50%);
+        padding: 20px;
+    }
+
+    #card-icon i {
+        font-size: 19px;
+    }
+
+    .small-card h4 {
+        font-size: 17px;
+    }
+
+    .small-card p {
+        font-size: 13px;
+    }
+
+    .box-text {
+        width: 100%;
+    }
+
+    .box-text > h1 {
+        margin-bottom: 30px;
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .text-card {
+        gap: 25px;
+    }
+
+    .first-text,
+    .second-text,
+    .third-text {
+        gap: 15px;
+    }
+
+    .first-text h2,
+    .second-text h2,
+    .third-text h2 {
+        width: 45px;
+        height: 45px;
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .first-text h3,
+    .second-text h3,
+    .third-text h3 {
+        font-size: 18px;
+    }
+
+    .first-text p,
+    .second-text p,
+    .third-text p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
 
     /* FOOTER */
 
     .panal-text {
         padding: 40px 20px;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 35px 20px;
     }
 
@@ -634,7 +1180,7 @@ footer {
     .about h4,
     .blog h4,
     .rent h4 {
-        font-size: 19px;
+        font-size: 18px;
     }
 
     .service a,
@@ -642,53 +1188,299 @@ footer {
     .about a,
     .blog a,
     .rent a {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .panal-icon {
         padding: 25px 20px;
         flex-direction: column;
+        justify-content: center;
         gap: 20px;
         text-align: center;
     }
 
     .panal-p {
-        font-size: 14px;
+        font-size: 13px;
     }
-
-    .panal-icon .icons {
-        font-size: 28px;
-    }
-
 }
 
-
-/* ========================= SMALL MOBILE ========================= */
+/* ======================== SMALL MOBILE ====================== */
 
 @media (max-width: 450px) {
 
-    .center-text h1 {
+    nav {
+        padding: 18px 15px;
+    }
+
+    .nav-icon h1 {
+        font-size: 24px;
+    }
+
+    .nav-icon i {
         font-size: 34px;
     }
 
-    .center-text p {
-        font-size: 15px;
+    .menu-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    /* HERO */
+
+    .center {
+        padding: 40px 15px 25px;
+    }
+
+    .center-text h1 {
+        font-size: 33px;
+    }
+
+    .center-text > p {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .explore-btn,
+    .watch-btn {
+        justify-content: center;
+    }
+
+    .hero-circle {
+        width: 280px;
+        height: 280px;
+    }
+
+    .floating-card {
+        right: 50%;
+        bottom: 10px;
+        min-width: 220px;
+        transform: translateX(50%);
+    }
+
+    /* SALE */
+
+    .sale-text {
+        padding: 25px 15px;
+    }
+
+    .sale-text h2 {
+        font-size: 24px;
+    }
+
+    /* CARDS */
+
+    .cards {
+        padding: 0 15px;
+    }
+
+    .card {
+        padding: 12px;
+        border-radius: 16px;
     }
 
     .card-img {
         height: 220px;
     }
 
+    .card-text {
+        padding: 15px 3px 5px;
+    }
+
+    .card-text h3 {
+        font-size: 18px;
+    }
+
     .property-info {
         font-size: 11px;
+        gap: 8px;
     }
 
-   .panal-text {
+    /* INFORMATION */
+
+    .card-information {
+        padding: 15px;
+    }
+
+    .information-text1,
+    .information-text2,
+    .information-text3 {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .information-text1 h4,
+    .information-text2 h4,
+    .information-text3 h4 {
+        font-size: 19px;
+    }
+
+    .information-text1 p,
+    .information-text2 p,
+    .information-text3 p {
+        font-size: 13px;
+    }
+
+    /* THIRD SECTION */
+
+    .box {
+        padding: 40px 15px 70px;
+        gap: 75px;
+    }
+
+    .box-img img {
+        height: 330px;
+        border-radius: 15px;
+    }
+
+    .small-card {
+        width: 90%;
+        min-height: 165px;
+        padding: 18px;
+        bottom: -45px;
+        border-radius: 16px;
+    }
+
+    #card-icon i {
+        font-size: 17px;
+    }
+
+    .small-card h4 {
+        font-size: 15px;
+    }
+
+    .small-card p {
+        font-size: 12px;
+    }
+
+    .box-text > h1 {
+        font-size: 28px;
+    }
+
+    .first-text,
+    .second-text,
+    .third-text {
+        gap: 12px;
+    }
+
+    .first-text h2,
+    .second-text h2,
+    .third-text h2 {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .first-text h3,
+    .second-text h3,
+    .third-text h3 {
+        font-size: 16px;
+    }
+
+    .first-text p,
+    .second-text p,
+    .third-text p {
+        font-size: 13px;
+    }
+
+    /* FOOTER */
+
+    .panal-text {
         width: 100%;
-        padding: 40px 20px;
-        display: grid;
+        padding: 35px 15px;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 35px 20px;
+        gap: 30px 15px;
     }
 
+    .service h4,
+    .assessment h4,
+    .about h4,
+    .blog h4,
+    .rent h4 {
+        font-size: 17px;
+    }
+
+    .service a,
+    .assessment a,
+    .about a,
+    .blog a,
+    .rent a {
+        font-size: 12px;
+    }
+
+    .panal-icon {
+        padding: 25px 15px;
+    }
+
+    .panal-icon1 h1 {
+        font-size: 24px;
+    }
+
+    .panal-icon1 i {
+        font-size: 30px;
+    }
+
+    .panal-p {
+        font-size: 12px;
+    }
+
+    .icons {
+        gap: 5px;
+    }
+
+    .icons i {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+}
+
+/* ======================= ANIMATIONS ======================== */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroImageFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes circleFloat {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes floatingCard {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
 }
