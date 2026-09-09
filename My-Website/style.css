@@ -33,6 +33,7 @@ button, a {
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
+    padding-top: 90px;
     background:
         radial-gradient(
             circle at 80% 35%,
@@ -45,11 +46,19 @@ button, a {
 /* ============================ NAVBAR ========================= */
 
 nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
     width: 100%;
-    padding: 30px 8%;
+    padding: 20px 8%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .nav-icon h1 {
@@ -233,7 +242,7 @@ nav {
     justify-content: center;
     border-radius: 50%;
     color: #111;
-    background: #f1f1f1;
+    background: #dfdfdf;
 }
 
 .watch-btn:hover {
@@ -931,8 +940,16 @@ nav {
 
 @media (max-width: 700px) {
 
-    nav {
-        padding: 20px;
+   nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        padding: 15px 20px;
+    }
+
+    .section-first {
+        padding-top: 75px;
     }
 
     .nav-text,
@@ -1209,7 +1226,11 @@ nav {
 @media (max-width: 450px) {
 
     nav {
-        padding: 18px 15px;
+        padding: 14px 15px;
+    }
+
+    .section-first {
+        padding-top: 70px;
     }
 
     .nav-icon h1 {
@@ -1255,7 +1276,7 @@ nav {
     }
 
     .floating-card {
-        right: 50%;
+        right: 10%;
         bottom: 10px;
         min-width: 220px;
         transform: translateX(50%);
