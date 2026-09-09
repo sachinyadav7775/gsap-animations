@@ -1,3 +1,55 @@
+function sectionFirstAnimation() {
+    function breakTheText() {
+        const h1 = document.querySelector(".nav-icon h1");
+        const text = h1.textContent.trim();
+
+        const half = Math.floor(text.length / 2);
+
+        let clutter = "";
+
+        text.split("").forEach((char, index) => {
+            const cls = index < half ? "a" : "b";
+            clutter += `<span class="${cls}">${char}</span>`;
+        });
+
+        h1.innerHTML = clutter;
+    }
+
+    breakTheText();
+
+    const tl = gsap.timeline();
+
+    tl.from(".nav-icon h1 .a", {
+        y: -30,
+        opacity: 0,
+        duration: 0.6,
+        delay:0.4,
+        stagger: 0.15,
+        ease: "power3.out"
+    });
+
+    tl.from(".nav-icon h1 .b", {
+        y: -30,
+        opacity: 0,
+        duration: 0.6,
+        delay:0.4,
+        stagger: -0.15,
+        ease: "power3.out"
+    }, "<");
+
+    gsap.from(".nav-icon i", {
+        opacity:0,
+        duration:1,
+        // delay:0.2
+    },"k")
+
+    gsap.from(".menu-icon",{
+        opacity:0,
+        duration:1,
+        // delay:0.2
+    }, "k")
+}
+
 function sectionSecondAnimation() {
     let tl2 = gsap.timeline({
         scrollTrigger:{
@@ -74,5 +126,6 @@ function sectionThirdAnimation() {
 
 }
 
+sectionFirstAnimation()
 sectionSecondAnimation()
 sectionThirdAnimation()

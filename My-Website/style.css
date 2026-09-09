@@ -1,3 +1,24 @@
+:root {
+    --white: #fff;
+    --black: #111;
+    --dark: #222;
+    --gray: #666;
+    --gray-dark: #3c3c3c;
+    --gray-light: #777;
+    --gray-border: #eee;
+    --gray-bg: #f2f2f2;
+    --gray-card: #d8d8da;
+    --gray-text: #b4b2b2;
+    --orange: #f4a261;
+    --yellow: #ffd000;
+    --star-yellow: #f5b400;
+    --green: #008000;
+    --hero-bg: #fff1dc;
+    --hero-bg-light: #ffe3bd;
+    --badge-bg: #f6f6f6;
+    --footer-bg: #1a1a1a;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,8 +34,8 @@ body {
 }
 
 body {
-    background: #fff;
-    color: #111;
+    background: var(--white);
+    color: var(--black);
 }
 
 img {
@@ -40,7 +61,7 @@ button, a {
             rgba(255, 213, 0, 0.12),
             transparent 30%
         ),
-    #fff;
+    var(--white);
 }
 
 /* ============================ NAVBAR ========================= */
@@ -61,16 +82,23 @@ nav {
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-.nav-icon h1 {
+.nav-icon {
+    gap: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+}
+
+.nav-icon h1 {
     font-size: 30px;
 }
 
+.nav-icon h1 span {
+    display: inline-block;
+}
+
 .nav-icon i {
-    color: #ffd000;
+    color: var(--yellow);
     font-size: 45px;
 }
 
@@ -81,6 +109,7 @@ nav {
 }
 
 .nav-text a {
+    position: relative;
     color: #000;
     font-size: 18px;
     font-weight: 500;
@@ -89,15 +118,30 @@ nav {
     transition: 0.3s ease;
 }
 
+.nav-text span:hover::after {
+    width: 100%;
+}
+
+.nav-text span:after {
+    content: "";
+    width: 0%; 
+    height: 2px;
+    left: 0;
+    bottom: -2px;
+    position: absolute;
+    transition: width 0.33s linear;
+    background-color: var(--orange);
+}
+
 .nav-text a:hover {
-    color: #f4a261;
+    color: var(--orange);
 }
 
 .nav-btn button {
     padding: 10px 30px;
     border: 1px solid #888;
     border-radius: 6px;
-    color: #111;
+    color: var(--black);
     background: transparent;
     font-size: 18px;
     font-weight: 500;
@@ -106,8 +150,8 @@ nav {
 }
 
 .nav-btn button:hover {
-    color: #fff;
-    background: #111;
+    color: var(--white);
+    background: var(--black);
 }
 
 .menu-icon {
@@ -151,20 +195,20 @@ nav {
     padding: 8px 15px;
     border-radius: 50px;
     color: #555;
-    background: #f6f6f6;
+    background: var(--badge-bg);
     font-size: 13px;
     font-weight: 500;
     animation: fadeUp 0.8s ease forwards;
 }
 
 .hero-badge i {
-    color: #f4a261;
+    color: var(--orange);
     font-size: 17px;
 }
 
 .center-text h1 {
     margin-top: 22px;
-    color: #111;
+    color: var(--black);
     font-size: clamp(45px, 5vw, 70px);
     line-height: 1.05;
     font-weight: 600;
@@ -174,14 +218,13 @@ nav {
 
 .center-text h1 span {
     position: relative;
-    color: #f4a261;
-
+    color: var(--orange);
 }
 
 .center-text > p {
     max-width: 520px;
     margin-top: 22px;
-    color: #666;
+    color: var(--gray);
     font-size: 17px;
     line-height: 1.7;
     animation: fadeUp 1.2s ease forwards;
@@ -211,8 +254,8 @@ nav {
     align-items: center;
     gap: 10px;
     border-radius: 8px;
-    color: #fff;
-    background: #111;
+    color: var(--white);
+    background: var(--black);
 }
 
 .explore-btn i {
@@ -220,7 +263,7 @@ nav {
 }
 
 .explore-btn:hover {
-    background: #f4a261;
+    background: var(--orange);
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(244, 162, 97, 0.3);
 }
@@ -241,12 +284,12 @@ nav {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    color: #111;
+    color: var(--black);
     background: #dfdfdf;
 }
 
 .watch-btn:hover {
-    color: #f4a261;
+    color: var(--orange);
 }
 
 /* ====================== HERO IMAGE ====================== */
@@ -266,8 +309,8 @@ nav {
     border-radius: 50%;
     background: linear-gradient(
         135deg,
-        #fff1dc,
-        #ffe3bd
+        var(--hero-bg),
+        var(--hero-bg-light)
     );
     filter: blur(1px);
     z-index: 0;
@@ -313,8 +356,8 @@ nav {
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    color: #fff;
-    background: #111;
+    color: var(--white);
+    background: var(--black);
     font-size: 20px;
 }
 
@@ -324,13 +367,13 @@ nav {
 
 .floating-card p {
     margin-top: 2px;
-    color: #777;
+    color: var(--gray-light);
     font-size: 11px;
 }
 
 .floating-card strong {
     margin-left: auto;
-    color: #008000;
+    color: var(--green);
     font-size: 14px;
 }
 
@@ -368,15 +411,15 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
-    background: #f4a261;
+    color: var(--white);
+    background: var(--orange);
     font-size: 24px;
     cursor: pointer;
     transition: 0.3s ease;
 }
 
 .sale-btn button:hover {
-    background: #222;
+    background: var(--dark);
     transform: scale(1.05);
 }
 
@@ -395,7 +438,7 @@ nav {
     padding: 20px;
     overflow: hidden;
     border-radius: 20px;
-    background: #fff;
+    background: var(--white);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     transition: 0.3s ease;
 }
@@ -430,8 +473,8 @@ nav {
     left: 15px;
     padding: 7px 14px;
     border-radius: 30px;
-    color: #222;
-    background: #fff;
+    color: var(--dark);
+    background: var(--white);
     font-size: 13px;
     font-weight: 600;
 }
@@ -444,20 +487,20 @@ nav {
 
 .card-text h3 {
     margin-bottom: 8px;
-    color: #222;
+    color: var(--dark);
     font-size: 19px;
     font-weight: 600;
 }
 
 .card-text > p {
     margin-bottom: 18px;
-    color: #777;
+    color: var(--gray-light);
     font-size: 13px;
 }
 
 .card-text > p i {
     margin-right: 5px;
-    color: #f4a261;
+    color: var(--orange);
 }
 
 /* ======================== PROPERTY INFO ======================== */
@@ -468,8 +511,8 @@ nav {
     align-items: center;
     gap: 15px;
     flex-wrap: wrap;
-    border-bottom: 1px solid #eee;
-    color: #666;
+    border-bottom: 1px solid var(--gray-border);
+    color: var(--gray);
     font-size: 12px;
 }
 
@@ -479,7 +522,7 @@ nav {
 
 .property-info i {
     margin-right: 3px;
-    color: #222;
+    color: var(--dark);
 }
 
 /* ========================= CARD BOTTOM ========================= */
@@ -492,7 +535,7 @@ nav {
 }
 
 .card-bottom h2 {
-    color: #008000;
+    color: var(--green);
     font-size: 22px;
     font-weight: 600;
 }
@@ -502,15 +545,15 @@ nav {
     height: 42px;
     border: none;
     border-radius: 50%;
-    color: #fff;
-    background: #222;
+    color: var(--white);
+    background: var(--dark);
     font-size: 18px;
     cursor: pointer;
     transition: 0.3s ease;
 }
 
 .card-bottom button:hover {
-    background: #f4a261;
+    background: var(--orange);
     transform: rotate(5deg);
 }
 
@@ -534,7 +577,7 @@ nav {
     align-items: flex-start;
     gap: 20px;
     border-radius: 15px;
-    background: #fff;
+    background: var(--white);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
@@ -543,7 +586,7 @@ nav {
 }
 
 .card-information i {
-    color: #f4a261;
+    color: var(--orange);
     font-size: 30px;
 }
 
@@ -558,7 +601,7 @@ nav {
 .information-text1 p,
 .information-text2 p,
 .information-text3 p {
-    color: #666;
+    color: var(--gray);
     font-size: 14px;
     line-height: 1.5;
 }
@@ -622,12 +665,12 @@ nav {
 
 #card-icon i {
     margin: 0;
-    color: #f5b400;
+    color: var(--star-yellow);
     font-size: 22px;
 }
 
 .small-card h4 {
-    color: #222;
+    color: var(--dark);
     font-size: 19px;
     line-height: 1.4;
 }
@@ -674,7 +717,7 @@ nav {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: #d8d8da;
+    background: var(--gray-card);
     font-size: 18px;
     font-weight: 600;
 }
@@ -709,7 +752,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 30px;
-    background: #f2f2f2;
+    background: var(--gray-bg);
 }
 
 .service h4,
@@ -737,7 +780,7 @@ nav {
 .about a,
 .blog a,
 .rent a {
-    color: #3c3c3c;
+    color: var(--gray-dark);
     text-decoration: none;
     font-size: 16px;
     transition: 0.3s ease;
@@ -748,7 +791,7 @@ nav {
 .about a:hover,
 .blog a:hover,
 .rent a:hover {
-    color: #f4a261;
+    color: var(--orange);
     padding-left: 3px;
 }
 
@@ -761,8 +804,8 @@ nav {
     align-items: center;
     justify-content: space-between;
     gap: 25px;
-    color: #fff;
-    background: #1a1a1a;
+    color: var(--white);
+    background: var(--footer-bg);
 }
 
 .panal-icon1 h1 {
@@ -772,12 +815,12 @@ nav {
 }
 
 .panal-icon1 i {
-    color: #ffd000;
+    color: var(--yellow);
     font-size: 35px;
 }
 
 .panal-p {
-    color: #b4b2b2;
+    color: var(--gray-text);
     font-size: 14px;
 }
 
@@ -796,7 +839,7 @@ nav {
     padding: 6px;
     border: 1px solid #555;
     border-radius: 10px;
-    color: #fff;
+    color: var(--white);
     font-size: 22px;
     cursor: pointer;
     transition: 0.3s ease;
@@ -807,8 +850,8 @@ nav {
 }
 
 .icons i:hover {
-    color: #111;
-    background: #fff;
+    color: var(--black);
+    background: var(--white);
     transform: translateY(-3px);
 }
 
@@ -936,11 +979,202 @@ nav {
     }
 }
 
+/* ==================== TABLET / SMALL LAPTOP ==================== */
+
+@media (max-width: 840px) {
+
+    nav {
+        padding: 18px 5%;
+    }
+
+    .nav-text {
+        gap: 15px;
+    }
+
+    .nav-text a {
+        font-size: 14px;
+    }
+
+    .nav-btn button {
+        padding: 8px 18px;
+        font-size: 14px;
+    }
+
+    /* HERO */
+
+    .center {
+        padding: 40px 5%;
+        gap: 30px;
+    }
+
+    .center-text {
+        width: 48%;
+    }
+
+    .center-text h1 {
+        font-size: clamp(38px, 5vw, 50px);
+    }
+
+    .center-text > p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .center-img {
+        width: 52%;
+    }
+
+    .hero-circle {
+        width: 350px;
+        height: 350px;
+    }
+
+    .floating-card {
+        right: -10px;
+        bottom: 20px;
+        min-width: 220px;
+        padding: 12px 14px;
+    }
+
+    /* PROPERTY CARDS */
+
+    .cards {
+        padding: 0 5%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .card-img {
+        height: 230px;
+    }
+
+    .card-text h3 {
+        font-size: 17px;
+    }
+
+    .property-info {
+        gap: 8px;
+        font-size: 11px;
+    }
+
+    .card-bottom h2 {
+        font-size: 20px;
+    }
+
+    /* INFORMATION */
+
+    .card-information {
+        padding: 25px 5%;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .information-text1,
+    .information-text2,
+    .information-text3 {
+        min-height: auto;
+        padding: 25px;
+    }
+
+    /* THIRD SECTION */
+
+    .box {
+        padding: 60px 5%;
+        gap: 40px;
+    }
+
+    .box-img {
+        width: 48%;
+    }
+
+    .box-img img {
+        height: 450px;
+    }
+
+    .box-text {
+        width: 48%;
+    }
+
+    .box-text > h1 {
+        font-size: 32px;
+    }
+
+    .small-card {
+        width: 260px;
+        right: -25px;
+        bottom: -25px;
+        min-height: 160px;
+        padding: 18px;
+    }
+
+    .small-card h4 {
+        font-size: 16px;
+    }
+
+    .first-text,
+    .second-text,
+    .third-text {
+        gap: 12px;
+    }
+
+    .first-text h2,
+    .second-text h2,
+    .third-text h2 {
+        width: 42px;
+        height: 42px;
+        font-size: 15px;
+    }
+
+    .first-text h3,
+    .second-text h3,
+    .third-text h3 {
+        font-size: 17px;
+    }
+
+    .first-text p,
+    .second-text p,
+    .third-text p {
+        font-size: 13px;
+    }
+
+    /* FOOTER */
+
+    .panal-text {
+        padding: 45px 5%;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px 20px;
+    }
+
+    .service h4,
+    .assessment h4,
+    .about h4,
+    .blog h4,
+    .rent h4 {
+        font-size: 18px;
+    }
+
+    .service a,
+    .assessment a,
+    .about a,
+    .blog a,
+    .rent a {
+        font-size: 13px;
+    }
+
+    .panal-icon {
+        padding: 20px 5%;
+    }
+}
+
 /* ==================== MOBILE ===================== */
 
 @media (max-width: 700px) {
 
-   nav {
+    nav {
         position: fixed;
         top: 0;
         left: 0;
